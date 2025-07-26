@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mars Bakery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Mars Bakery</h1>
+    <nav>
+<!--      <ul>-->
+      <ul id="product-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+	<h2>Freshly Baked Goodness Every Day</h2>
+	<p>From crusty sourdough to sweet cupcakes, we bring delight in every bite.</p>
+  </section>
+
+  <section class="products">
+    <h3>Our Treats</h3>
+    <div class="grid">
+      <div class="item">
+        <img src="fresh_bread.jpg" alt="Fresh Bread" height="200">
+		<button onclick="addToCart('Artisan Bread', 150)">Add to Cart</button>
+        <h4>Artisan Bread</h4>
+      </div>
+      <div class="item">
+        <img src="choc_cake.jpg" alt="Chocolate Cake">
+		<button onclick="addToCart('Chocolate Cake', 150)">Add to Cart</button>
+        <h4>Chocolate Cake</h4>
+      </div>
+      <div class="item">
+        <img src="cupcake.jpg" alt="Cupcake" height="200">
+		<button onclick="addToCart('Chocolate Cupcake', 150)">Add to Cart</button>
+        <h4>Chocolate Cupcake</h4>
+      </div>
+    </div>
+  </section>
+
+	<section class="order">
+	  <h3>Place an Order</h3>
+	  <form>
+		<label for="product">Choose your treat:</label>
+		<select id="product">
+		  <option>Bread</option>
+		  <option>Cake</option>
+		  <option>Cupcake</option>
+		</select>
+
+		<label for="quantity">Quantity:</label>
+		<input type="number" id="quantity" min="1" max="10">
+
+		<label for="pickup">Pickup Time:</label>
+		<input type="datetime-local" id="pickup">
+
+		<button type="submit">Order Now</button>
+	  </form>
+	</section>
+
+	<section class="cart">
+	  <h3>Your Cart</h3>
+	  <ul id="cart-items"></ul>
+	  <p><strong>Total:</strong> ₹<span id="total">0</span></p>
+	  <button onclick="checkout()">Proceed to Pay</button>
+	</section>
+
+  <footer>
+    <p>© 2025 Mars Bakery | Baked with love in Bengaluru</p>
+  </footer>
+</body>
+</html>
+
+<script>
+  function takeQuiz() {
+    const pastries = ["Cupcake", "Croissant", "Macaron", "Eclair"];
+    const random = pastries[Math.floor(Math.random() * pastries.length)];
+    document.getElementById("result").innerText = `You are a delicious ${random}! 🍬`;
+  }
+</script>
+
+<script>
+  let cart = [];
+
+  function addToCart(product, price) {
+    cart.push({ product, price });
+    updateCart();
+  }
+
+  function updateCart() {
+    const itemsList = document.getElementById("cart-items");
+    itemsList.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      total += item.price;
+      itemsList.innerHTML += `<li>${item.product} - ₹${item.price} 
+        <button onclick="removeItem(${index})">Remove</button></li>`;
+    });
+
+    document.getElementById("total").innerText = total;
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+  }
+
+  function checkout() {
+    if (cart.length === 0) {
+      alert("Cart is empty. Add something tasty!");
+    } else {
+      alert("Redirecting to secure payment gateway... 🍰 (Simulation)");
+      // Here you'd actually integrate with Stripe, Razorpay, etc.
+    }
+  }
+</script>
