@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.carousel-item {
+  height: 50vh; /* Adjusts the height to 50% of the viewport height */
+  overflow: hidden; /* Clips content that exceeds the height */
+}
+
+.carousel-inner .carousel-item img {
+  height: 100%; /* Ensures the image fills the carousel item height */
+  object-fit: cover; /* Crops and scales the image to fit without distortion */
+}

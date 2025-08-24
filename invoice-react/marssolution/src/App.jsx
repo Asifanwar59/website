@@ -38,25 +38,29 @@ import scenery4 from './images/scenary4.png';
 function App() {
   return (
     <>
-      <Navbar bg="light" data-bs-theme="light" fixed="top">
+      <Navbar bg="info" data-bs-theme="light" fixed="top">
         <Container>
           <Navbar.Brand href="#home">
             <img
               src={mars_logo_v5}
               alt="Logo"
-              width="30"
-              height="30"
+              width="60"
+              height="60"
               className="d-inline-block align-top"
-              style={{ marginRight: '8px' }}
+              style={{ marginRight: '2px' }}
             />
-            Mars Solution
+            Mehdi Website
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
           </Nav>
+          <Nav className="ms-auto">
+            <Nav.Link href="#home">Login</Nav.Link>
+          </Nav>
+
         </Container>
       </Navbar>
-      <br />
+      {/*<br />*/}
 
       {/* ********Start of Main slide show Corousel******** */}
       <Carousel>
@@ -66,10 +70,6 @@ function App() {
             className="d-block img-fluid w-100 h-100"
             src={scenery1}
             alt="First slide"
-            //width={50}
-            //height={50}
-            //style={{ height: '800px', width: '50', objectFit: 'cover' }}
-
           />
           <Carousel.Caption>
             <h3>Scenary-1</h3>
@@ -79,14 +79,10 @@ function App() {
 
         <Carousel.Item interval={500}>
           <img
-          className="d-block img-fluid h-100 w-100" 
-          //className="d-block w-100 h-100"
+            className="d-block img-fluid h-100 w-100"
+            //className="d-block w-100 h-100"
             src={scenery2}
             alt="Third slide"
-            //width={50}
-            //height={50}
-            //style={{ height: '800px', width: '50', objectFit: 'cover' }}
-
           />
           <Carousel.Caption>
             <h3>Scenary-2</h3>
@@ -97,12 +93,11 @@ function App() {
         <Carousel.Item interval={500}>
           <img
             className="d-block img-fluid h-100 w-100"
-            //className="d-block w-100" // Apply Bootstrap classes for responsive image behavior
             src={scenery2}
             alt="First slide"
-            //width={50}
-            //height={50}
-            //style={{ height: '800px', width: '50', objectFit: 'cover' }}
+          //width={50}
+          //height={50}
+          //style={{ height: '800px', width: '50', objectFit: 'cover' }}
 
           />
           <Carousel.Caption>
@@ -117,9 +112,9 @@ function App() {
             //className="d-block w-100 h-100"
             src={scenery3}
             alt="Third slide"
-            //width={50}
-            //height={50}
-            //style={{ height: '800px', width: '50', objectFit: 'cover' }}
+          //width={50}
+          //height={50}
+          //style={{ height: '800px', width: '50', objectFit: 'cover' }}
 
           />
           <Carousel.Caption>
@@ -128,10 +123,103 @@ function App() {
           </Carousel.Caption>
         </Carousel.Item>
 
-
       </Carousel>
       <br />
       {/* ********End of Main slide show Corousel******** */}
+
+      {/* ********Start of product list 1******** */}
+      <Carousel slide fade>
+        <Carousel.Item interval={300}>
+          {/* Container with three images as a slide */}
+          <Container>
+            <Row>
+              <Col xs={3} md={3}>
+                <Image src={watchImg} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Know more</Button>
+                </div>
+              </Col>
+              <Col xs={3} md={3}>
+                <Image src={watchImg} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Know More</Button>
+                </div>
+              </Col>
+              <Col xs={5} md={3}>
+                <Image src={watchImg} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Know more</Button>
+                </div>
+              </Col>
+              <Col xs={3} md={3}>
+                <Card style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src={tshirt3} />
+                  <Card.Body>
+                    <Card.Title>T-shirt</Card.Title>
+                    <Card.Text>
+                      Wide range of clotings to fit all sizes at discounted price.
+                    </Card.Text>
+                    <Button variant="primary">Know more</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col xs={3} md={3}>
+                <Card style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src={tshirt3} />
+                  <Card.Body>
+                    <Card.Title>T-shirt</Card.Title>
+                    <Card.Text>
+                      Wide range of clotings to fit all sizes at discounted price.
+                    </Card.Text>
+                    <Button variant="primary">Know more</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+            <br />
+
+          </Container>
+          <Carousel.Caption>
+            <h3>Product Gallery</h3>
+            <p>Browse our featured items.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+{/* Second slide with three images 
+        <Carousel.Item interval={500}>
+          <Container>
+            <Row>
+              <Col xs={6} md={4}>
+                <Image src={shoeImage} rounded style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Buy</Button>
+                </div>
+
+              </Col>
+              <Col xs={6} md={4}>
+                <Image src={shoeImage} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Buy</Button>
+                </div>
+
+              </Col>
+              <Col xs={6} md={4}>
+                <Image src={shoeImage} thumbnail style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Buy</Button>
+                </div>
+
+              </Col>
+            </Row>
+          </Container>
+          <Carousel.Caption>
+            <h3>Product Gallery</h3>
+            <p>Browse our featured items.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        */}
+
+      </Carousel>
 
       {/* ********Start of product list******** */}
       <Carousel slide fade>
@@ -142,19 +230,19 @@ function App() {
               <Col xs={3} md={3}>
                 <Image src={TshirtImg} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
                 <div className="d-flex justify-content-center mt-2">
-                  <Button variant="primary">Buy T-Shirt</Button>
+                  <Button variant="primary">Know more</Button>
                 </div>
               </Col>
               <Col xs={3} md={3}>
                 <Image src={tshirt1} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
                 <div className="d-flex justify-content-center mt-2">
-                  <Button variant="primary">Buy T-Shirt</Button>
+                  <Button variant="primary">Know More</Button>
                 </div>
               </Col>
               <Col xs={5} md={3}>
                 <Image src={tshirt2} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
                 <div className="d-flex justify-content-center mt-2">
-                  <Button variant="primary">Buy T-Shirt</Button>
+                  <Button variant="primary">Know more</Button>
                 </div>
               </Col>
               <Col xs={3} md={3}>
@@ -163,12 +251,25 @@ function App() {
                   <Card.Body>
                     <Card.Title>T-shirt</Card.Title>
                     <Card.Text>
-                      Wide range of Slim fit T-shirt.
+                      Wide range of clotings to fit all sizes at discounted price.
                     </Card.Text>
-                    <Button variant="primary">Buy</Button>
+                    <Button variant="primary">Know more</Button>
                   </Card.Body>
                 </Card>
               </Col>
+              <Col xs={3} md={3}>
+                <Card style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src={tshirt3} />
+                  <Card.Body>
+                    <Card.Title>T-shirt</Card.Title>
+                    <Card.Text>
+                      Wide range of clotings to fit all sizes at discounted price.
+                    </Card.Text>
+                    <Button variant="primary">Know more</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+
             </Row>
             <br />
 
@@ -187,21 +288,21 @@ function App() {
               <Col xs={6} md={4}>
                 <Image src={shoeImage} rounded style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
                 <div className="d-flex justify-content-center mt-2">
-                  <Button variant="primary">Buy T-Shirt</Button>
+                  <Button variant="primary">Buy</Button>
                 </div>
 
               </Col>
               <Col xs={6} md={4}>
                 <Image src={shoeImage} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
                 <div className="d-flex justify-content-center mt-2">
-                  <Button variant="primary">Buy T-Shirt</Button>
+                  <Button variant="primary">Buy</Button>
                 </div>
 
               </Col>
               <Col xs={6} md={4}>
                 <Image src={shoeImage} thumbnail style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
                 <div className="d-flex justify-content-center mt-2">
-                  <Button variant="primary">Buy T-Shirt</Button>
+                  <Button variant="primary">Buy</Button>
                 </div>
 
               </Col>
@@ -216,6 +317,104 @@ function App() {
       </Carousel>
       <br />
       <br />
+
+      {/* ********Start of product list 3******** */}
+      <Carousel slide fade>
+        <Carousel.Item interval={800}>
+          {/* Container with three images as a slide */}
+          <Container>
+            <Row>
+              <Col xs={3} md={3}>
+                <Image src={TshirtImg} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Know more</Button>
+                </div>
+              </Col>
+              <Col xs={3} md={3}>
+                <Image src={tshirt1} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Know More</Button>
+                </div>
+              </Col>
+              <Col xs={5} md={3}>
+                <Image src={tshirt2} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Know more</Button>
+                </div>
+              </Col>
+              <Col xs={3} md={3}>
+                <Card style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src={tshirt3} />
+                  <Card.Body>
+                    <Card.Title>T-shirt</Card.Title>
+                    <Card.Text>
+                      Wide range of clotings to fit all sizes at discounted price.
+                    </Card.Text>
+                    <Button variant="primary">Know more</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col xs={3} md={3}>
+                <Card style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src={tshirt3} />
+                  <Card.Body>
+                    <Card.Title>T-shirt</Card.Title>
+                    <Card.Text>
+                      Wide range of clotings to fit all sizes at discounted price.
+                    </Card.Text>
+                    <Button variant="primary">Know more</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+
+            </Row>
+            <br />
+
+          </Container>
+          <Carousel.Caption>
+            <h3>Product Gallery</h3>
+            <p>Browse our featured items.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+
+        <Carousel.Item interval={500}>
+          {/* Container with three images as a slide */}
+          <Container>
+            <Row>
+              <Col xs={6} md={4}>
+                <Image src={shoeImage} rounded style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Buy</Button>
+                </div>
+
+              </Col>
+              <Col xs={6} md={4}>
+                <Image src={shoeImage} roundedCircle style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Buy</Button>
+                </div>
+
+              </Col>
+              <Col xs={6} md={4}>
+                <Image src={shoeImage} thumbnail style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                <div className="d-flex justify-content-center mt-2">
+                  <Button variant="primary">Buy</Button>
+                </div>
+
+              </Col>
+            </Row>
+          </Container>
+          <Carousel.Caption>
+            <h3>Product Gallery</h3>
+            <p>Browse our featured items.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+      </Carousel>
+      <br />
+      <br />
+
 
       <Navbar bg="dark" data-bs-theme="dark" >
         <Container>
